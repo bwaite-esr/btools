@@ -1,5 +1,5 @@
-#' pivotCacheExtractor
-#' @param file An excel file with pivot tables.
+#' xlsxPivotCacheExtractor
+#' @param file An excel xlsx file with pivot tables.
 #' @description Extract the hidden table that feeds excel pivot tables. Each pivot table is extracted from the excel file.
 #' @return a list of dataframes, one for each pivot table cache in the excel file.
 #' @export
@@ -14,9 +14,9 @@
 #' @importFrom rlang .data
 #'
 #' @examples
-#' pivotCacheExtractor(file = system.file("extdata/test_sheet.xlsx",
-#' package = "pivotCacheExtractor",mustWork = TRUE))
-pivotCacheExtractor <- function(file){
+#' xlsxPivotCacheExtractor(file = system.file("extdata/test_sheet.xlsx",
+#' package = "btools",mustWork = TRUE))
+xlsxPivotCacheExtractor <- function(file){
   temporary_directory <- tempdir()
   unzip(zipfile = file,exdir = paste0(temporary_directory,"/extracted/"))
   extracted_files <- list.files(temporary_directory,recursive = TRUE,full.names = TRUE)

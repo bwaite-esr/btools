@@ -1,4 +1,4 @@
 library(testthat)
-library(pivotCacheExtractor)
+library(btools)
 
-test_check("pivotCacheExtractor")
+test_check("btools")

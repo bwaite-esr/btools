@@ -1,5 +1,5 @@
-Package: pivotCacheExtractor
-Title: What the Package Does (One Line, Title Case)
+Package: btools
+Title: Collection of tools
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Ben",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "ben.waite@esr.cri.nz",
            comment = c(ORCID = "0000-0003-0909-8078"))
-Description: Extracts excel file pivot table cache data.
+Description: A package to collect tools.
 License: GPL-3
 Suggests: 
     testthat (>= 2.1.0)

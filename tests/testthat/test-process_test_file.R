@@ -1,8 +1,8 @@
 test_that("can process test excel file", {
-  expect_equal(pivotCacheExtractor(
+  expect_equal(xlsxPivotCacheExtractor(
     file = system.file(
       "extdata/test_sheet.xlsx",
-      package = "pivotCacheExtractor",
+      package = "btools",
       mustWork = TRUE
     )
   )

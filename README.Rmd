@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/pivotCacheExtractor)](https://CRAN.R-project.org/package=pivotCacheExtractor)
 <!-- badges: end -->
 
-The goal of pivotCacheExtractor is to allow programatic extraction of excel pivot table data in R.
+Tools to assist with automation.
 
 ## Installation
 
@@ -27,14 +27,14 @@ You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("bwaite-esr/pivotCacheExtractor")
+devtools::install_github("bwaite-esr/btools")
 ```
 ## Example
 
 You have an excel file with multiple pivot tables and you want the raw data:
 
 ```{r example}
-library(pivotCacheExtractor)
-pivotCacheExtractor(file = system.file("extdata/test_sheet.xlsx",
-package = "pivotCacheExtractor",mustWork = TRUE))
+library(btools)
+xlsxPivotCacheExtractor(file = system.file("extdata/test_sheet.xlsx",
+package = "btools",mustWork = TRUE))
 ```
