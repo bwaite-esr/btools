@@ -8,7 +8,7 @@ Authors@R:
            email = "ben.waite@esr.cri.nz",
            comment = c(ORCID = "0000-0003-0909-8078"))
 Description: A package to collect tools.
-License: GPL-3
+License: MIT + file LICENSE
 Suggests: 
     testthat (>= 2.1.0)
 Imports:
