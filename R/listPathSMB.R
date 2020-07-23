@@ -14,7 +14,6 @@
 #'
 #' @importFrom reticulate use_python
 #' @importFrom reticulate import
-#' @importFrom reticulate py_run_string
 #' @return Retrieve a directory listing of files/folders at `path`
 #' @export
 #'

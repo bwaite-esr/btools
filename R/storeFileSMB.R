@@ -14,7 +14,8 @@
 #'
 #' @importFrom reticulate use_python
 #' @importFrom reticulate import
-#' @importFrom reticulate py_run_string
+#' @importFrom reticulate import_builtins
+#' @importFrom reticulate %as%
 #' @return Returns no value
 #' @export
 #'
