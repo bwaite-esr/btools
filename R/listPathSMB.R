@@ -1,12 +1,12 @@
-#' renameSMB
-#' @description Use python SMBConnection to rename/move a file at path on a SMB share.
+#' listPathSMB
+#' @description Use python SMBConnection to retrieve the list of files/folders at a `path`
 #' @param username Your SMB user name
 #' @param password Your SMB user password, do not store this in your code!
 #' @param my_name The machine you are running this operation on (Default : `Sys.info()[["nodename"]]`)
 #' @param remote_name The smb server name
-#' @param service_name The share name i.e. `'Share'`
-#' @param old_path The complete path including file name and extension to your file e.g. `'Files/Reporting/test.txt'`
-#' @param new_path The complete path including file name and extension to your new location e.g. `'Files/Reporting/test_renamed.txt'`
+#' @param service_name The service_name name i.e. `'service_name'`
+#' @param path The SMB folder path where your file is e.g. `'Files/Reporting/'`
+#' @param pattern string filtering results (Default : `'*'`)
 #' @param domain SMB server domain
 #' @param port Common port  (Default : `445`)
 #' @param timeout  How long to keep the connection open before timeout (Default : `30`)
@@ -15,17 +15,17 @@
 #' @importFrom reticulate use_python
 #' @importFrom reticulate import
 #' @importFrom reticulate py_run_string
-#' @return Returns no value
+#' @return Retrieve a directory listing of files/folders at `path`
 #' @export
 #'
-renameSMB <-
+listPathSMB <-
   function(username,
            password,
            my_name = Sys.info()[["nodename"]],
            remote_name,
            service_name,
-           old_path,
-           new_path,
+           path,
+           pattern,
            domain,
            port = 445,
            timeout = 30,
@@ -43,7 +43,12 @@ renameSMB <-
         is_direct_tcp = 'True'
       )
     connected <- smb$connect(remote_name, as.integer(port))
-    sharedfiles <-
-      smb$rename(service_name, old_path, new_path, timeout)
+    service_namedfiles <-
+      smb$listPath(service_name, path = path, pattern = pattern)
     smb$close()
+    return(sapply(
+      service_namedfiles,
+      FUN = function(x)
+        x$filename
+    ))
   }
