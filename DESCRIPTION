@@ -1,6 +1,6 @@
 Package: btools
 Title: Collection of tools
-Version: 0.0.0.9103
+Version: 0.0.0.9104
 Authors@R: 
     person(given = "Ben",
            family = "Waite",
