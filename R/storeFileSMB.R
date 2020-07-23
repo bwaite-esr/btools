@@ -5,9 +5,9 @@
 #' @param my_name The machine you are running this operation on (Default : `Sys.info()[["nodename"]]`)
 #' @param remote_name The smb server name
 #' @param service_name The service_name name i.e. `'Share'`
-#' @param path Full file path, to be read e.g. `'/home/username/file.txt'`
+#' @param path The path to put your file e.g. `'/home/username/file.txt'`
 #' @param domain SMB server domain
-#' @param file_obj The path to put your file e.g. `'Files/Reporting/MyData.csv'`
+#' @param file_obj  Full file path, to be read e.g. `'Files/Reporting/MyData.csv'`
 #' @param port Common port  (Default : `445`)
 #' @param timeout  How long to keep the connection open before timeout (Default : `30`)
 #' @param python_location The location of your python installation
