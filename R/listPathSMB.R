@@ -37,7 +37,7 @@ listPathSMB <-
         password,
         my_name,
         remote_name,
-        domain = 'ESR-AD',
+        domain = 'domain',
         use_ntlm_v2 = 'True',
         is_direct_tcp = 'True'
       )
