@@ -4,9 +4,19 @@
 \alias{storeFileSMB}
 \title{storeFileSMB}
 \usage{
-storeFileSMB(username, password, my_name = Sys.info()[["nodename"]],
-  remote_name, service_name, path, domain, file_obj, port = 445,
-  timeout = 30, python_location)
+storeFileSMB(
+  username,
+  password,
+  my_name = Sys.info()[["nodename"]],
+  remote_name,
+  service_name,
+  path,
+  domain,
+  file_obj,
+  port = 445,
+  timeout = 30,
+  python_location
+)
 }
 \arguments{
 \item{username}{Your SMB user name}
@@ -19,11 +29,11 @@ storeFileSMB(username, password, my_name = Sys.info()[["nodename"]],
 
 \item{service_name}{The service_name name i.e. \code{'Share'}}
 
-\item{path}{Full file path, to be read e.g. \code{'/home/username/file.txt'}}
+\item{path}{The path to put your file e.g. \code{'/home/username/file.txt'}}
 
 \item{domain}{SMB server domain}
 
-\item{file_obj}{The path to put your file e.g. \code{'Files/Reporting/MyData.csv'}}
+\item{file_obj}{Full file path, to be read e.g. \code{'Files/Reporting/MyData.csv'}}
 
 \item{port}{Common port  (Default : \code{445})}
 

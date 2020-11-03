@@ -37,11 +37,11 @@ listPathSMB <-
         password,
         my_name,
         remote_name,
-        domain = 'domain',
+        domain = domain,
         use_ntlm_v2 = 'True',
         is_direct_tcp = 'True'
       )
-    connected <- smb$connect(remote_name, as.integer(port))
+    connected <- smb$connect(ip = remote_name, port = as.integer(port),timeout = as.integer(timeout))
     service_namedfiles <-
       smb$listPath(service_name, path = path, pattern = pattern)
     smb$close()

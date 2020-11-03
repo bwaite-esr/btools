@@ -4,9 +4,18 @@
 \alias{createDirectorySMB}
 \title{createDirectorySMB}
 \usage{
-createDirectorySMB(username, password,
-  my_name = Sys.info()[["nodename"]], remote_name, service_name, path,
-  domain, port = 445, timeout = 30, python_location)
+createDirectorySMB(
+  username,
+  password,
+  my_name = Sys.info()[["nodename"]],
+  remote_name,
+  service_name,
+  path,
+  domain,
+  port = 445,
+  timeout = 30,
+  python_location
+)
 }
 \arguments{
 \item{username}{Your SMB user name}

@@ -37,7 +37,7 @@ renameSMB <-
         password,
         my_name,
         remote_name,
-        domain = 'domain',
+        domain = domain,
         use_ntlm_v2 = 'True',
         is_direct_tcp = 'True'
       )

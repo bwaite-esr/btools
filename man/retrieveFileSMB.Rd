@@ -4,9 +4,19 @@
 \alias{retrieveFileSMB}
 \title{retrieveFileSMB}
 \usage{
-retrieveFileSMB(username, password, my_name = Sys.info()[["nodename"]],
-  remote_name, service_name, path, domain, file_obj, port = 445,
-  timeout = 30, python_location)
+retrieveFileSMB(
+  username,
+  password,
+  my_name = Sys.info()[["nodename"]],
+  remote_name,
+  service_name,
+  path,
+  domain,
+  file_obj,
+  port = 445,
+  timeout = 30,
+  python_location
+)
 }
 \arguments{
 \item{username}{Your SMB user name}

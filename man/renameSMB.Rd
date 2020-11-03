@@ -4,9 +4,19 @@
 \alias{renameSMB}
 \title{renameSMB}
 \usage{
-renameSMB(username, password, my_name = Sys.info()[["nodename"]],
-  remote_name, service_name, old_path, new_path, domain, port = 445,
-  timeout = 30, python_location)
+renameSMB(
+  username,
+  password,
+  my_name = Sys.info()[["nodename"]],
+  remote_name,
+  service_name,
+  old_path,
+  new_path,
+  domain,
+  port = 445,
+  timeout = 30,
+  python_location
+)
 }
 \arguments{
 \item{username}{Your SMB user name}

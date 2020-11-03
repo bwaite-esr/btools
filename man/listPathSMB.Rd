@@ -4,9 +4,19 @@
 \alias{listPathSMB}
 \title{listPathSMB}
 \usage{
-listPathSMB(username, password, my_name = Sys.info()[["nodename"]],
-  remote_name, service_name, path, pattern, domain, port = 445,
-  timeout = 30, python_location)
+listPathSMB(
+  username,
+  password,
+  my_name = Sys.info()[["nodename"]],
+  remote_name,
+  service_name,
+  path,
+  pattern,
+  domain,
+  port = 445,
+  timeout = 30,
+  python_location
+)
 }
 \arguments{
 \item{username}{Your SMB user name}
