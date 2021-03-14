@@ -63,7 +63,7 @@ xlsxPivotCacheExtractor <- function(file){
         factor(
           x = as.numeric(row_data[, eval(n)]),
           labels = definition_values[[eval(n)]],
-          levels = 1:length(definition_values[[eval(n)]])
+          levels = unique(row_data[, eval(n)])
         )
     }
     return(row_data)
