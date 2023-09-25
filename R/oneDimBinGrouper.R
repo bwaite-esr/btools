@@ -4,7 +4,7 @@
 #' @param group Name of columns to group by
 #' @param bin_size Size of 'bin' to fill (Such as 96 for a 96 well plate, or 8 for 8 rows on a plate)
 #'
-#' @return
+#' @return Data grouped to fill 1-D bin.
 #' @export
 #' @importFrom magrittr %>%
 #' @importFrom dplyr summarise
@@ -23,7 +23,6 @@
 #' @importFrom dplyr left_join
 #' @importFrom dplyr pull
 #'
-#' @examples
 #'
 oneDimBinGrouper <- function(data, group, bin_size) {
   # library(tidyverse)

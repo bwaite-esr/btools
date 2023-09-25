@@ -14,11 +14,8 @@ oneDimBinGrouper(data, group, bin_size)
 \item{bin_size}{Size of 'bin' to fill (Such as 96 for a 96 well plate, or 8 for 8 rows on a plate)}
 }
 \value{
-
+Data grouped to fill 1-D bin.
 }
 \description{
 Group together rows by their \code{'group'} and order the groups such that they fill 1-D bins of size \code{'bin_size'}
-}
-\examples{
-
 }
