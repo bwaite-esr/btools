@@ -1,6 +1,6 @@
 Package: btools
 Title: Collection of tools
-Version: 0.0.0.9220
+Version: 0.0.0.9230
 Authors@R: 
     person("Ben", "Waite", , "ben.waite@esr.cri.nz", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-0909-8078"))

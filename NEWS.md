@@ -4,4 +4,4 @@
 
 - Added [rclone](https://rclone.org/) wrappers for SMB hosts
 
-Supported functions: copyto, delete, mkdir, purge, lsjson
+Supported functions: copyto, delete, mkdir, purge, lsjson, moveto

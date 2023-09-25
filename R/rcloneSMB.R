@@ -140,7 +140,63 @@ ls_rclone_smb <-
     content_df <- rbind(content_df, jsonlite::fromJSON(content_json))
     return(content_df)
   }
-
+#' Move file from source to destination
+#' @description Overwrite file/folder at destination with source
+#' @param host SMB server hostname to connect to
+#' @param user SMB username
+#' @param password Plain text password. If you have an obscured password
+#' pass the obscured password in variable `pass`.
+#' @param rclone_location Location of `rclone`
+#' @param ... Additional variables for [btools::rclone_smb_connection_string]
+#' @param src Source file/folder path
+#' @param dest Destination file/folder path
+#' @param src_smb Source is on smb. If false path is treated as local
+#' @param dest_smb Destination is on smb. If false path is treated as local
+#' @param dry_run Do a trial run with no permanent changes
+#'
+#' @return Silent
+#' @export
+#' @importFrom rlang inject
+moveto_rclone_smb <-   function(host,
+                                user,
+                                src,
+                                dest,
+                                src_smb = TRUE,
+                                dest_smb = TRUE,
+                                password = NULL,
+                                rclone_location = Sys.getenv("rclone_location"),
+                                dry_run = TRUE,
+                                ...) {
+  arg_list <- list(...)
+  if (!is.null(password)) {
+    arg_list$pass <- rclone_obscure(password, rclone_location)
+  }
+  connection_string <-
+    rlang::inject(rclone_smb_connection_string(host, user,!!!arg_list))
+  src <- shQuote(src[1])
+  dest <- shQuote(dest[1])
+  if (src_smb) {
+    src <- paste0(":smb:",src)
+  }
+  if (dest_smb) {
+    dest <- paste0(":smb:",dest)
+  }
+  system(
+    command = paste(
+      rclone_location,
+      connection_string ,
+      "moveto",
+      src,
+      dest,
+      if (dry_run) {
+        " --dry-run"
+      } else{
+        ""
+      }
+    ),
+    intern = FALSE
+  )
+}
 #' Copy file from source to destination
 #' @description Overwrite file/folder at destination with source
 #' @param host SMB server hostname to connect to
