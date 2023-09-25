@@ -117,6 +117,7 @@ ls_rclone_smb <-
     if (all(files_only, dirs_only)) {
       warning("files_only and dirs_only both TRUE: No results will be returned!")
     }
+    path <- shQuote(path[1])
     content_json <-
       system(
         command = paste0(rclone_location, " lsjson ",
@@ -171,11 +172,13 @@ copyto_rclone_smb <-   function(host,
   }
   connection_string <-
     rlang::inject(rclone_smb_connection_string(host, user,!!!arg_list))
+  src <- shQuote(src[1])
+  dest <- shQuote(dest[1])
   if (src_smb) {
-    src <- paste0(":smb:",src[1])
+    src <- paste0(":smb:",src)
   }
   if (dest_smb) {
-    dest <- paste0(":smb:",dest[1])
+    dest <- paste0(":smb:",dest)
   }
   system(
     command = paste(
@@ -216,13 +219,14 @@ delete_rclone_smb <-   function(host,
   }
   connection_string <-
     rlang::inject(rclone_smb_connection_string(host, user,!!!arg_list))
+  path <- shQuote(path[1])
   system(
     command = paste0(
       rclone_location,
       " ",
       connection_string ,
       " delete :smb:",
-      shQuote(path),
+      path,
       if (rmdirs) {
         " --rmdirs"
       } else{
@@ -261,13 +265,14 @@ mkdir_rclone_smb <-   function(host,
   }
   connection_string <-
     rlang::inject(rclone_smb_connection_string(host, user,!!!arg_list))
+  path <- shQuote(path[1])
   system(
     command = paste0(
       rclone_location,
       " ",
       connection_string ,
       " mkdir :smb:",
-      shQuote(path)
+      path
     ),
     intern = FALSE
   )
@@ -298,13 +303,14 @@ purge_rclone_smb <-   function(host,
   }
   connection_string <-
     rlang::inject(rclone_smb_connection_string(host, user,!!!arg_list))
+  path <- shQuote(path[1])
   system(
     command = paste0(
       rclone_location,
       " ",
       connection_string ,
       " purge :smb:",
-      shQuote(path),
+      path,
       if (dry_run) {
         " --dry-run"
       } else{
